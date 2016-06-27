@@ -1,0 +1,5 @@
+*.json
+*.db
+cmd/importer/importer
+cmd/server/server
+cmd/syncer/syncer
