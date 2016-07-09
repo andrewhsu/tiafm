@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"github.com/cbroglie/mustache"
 	_ "github.com/mattn/go-sqlite3"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -63,11 +63,11 @@ func racerHandler(w http.ResponseWriter, r *http.Request) {
 		context.Results = append(context.Results, result)
 	}
 
-	out, err := mustache.RenderFile("racer.html.mustache", &context)
+	t, err := template.ParseFiles("racer.html.template")
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, err = w.Write([]byte(out))
+	err = t.Execute(w, context)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -113,11 +113,11 @@ func classHandler(w http.ResponseWriter, r *http.Request) {
 		context.Bw = append(context.Bw, line)
 	}
 
-	out, err := mustache.RenderFile("class.html.mustache", &context)
+	t, err := template.ParseFiles("class.html.template")
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, err = w.Write([]byte(out))
+	err = t.Execute(w, context)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -151,11 +151,11 @@ func classesHandler(w http.ResponseWriter, r *http.Request) {
 		context.Classes = append(context.Classes, class)
 	}
 
-	out, err := mustache.RenderFile("classes.html.mustache", &context)
+	t, err := template.ParseFiles("classes.html.template")
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, err = w.Write([]byte(out))
+	err = t.Execute(w, context)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -190,11 +190,11 @@ func racersHandler(w http.ResponseWriter, r *http.Request) {
 		context.Racers = append(context.Racers, racer)
 	}
 
-	out, err := mustache.RenderFile("racers.html.mustache", &context)
+	t, err := template.ParseFiles("racers.html.template")
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, err = w.Write([]byte(out))
+	err = t.Execute(w, context)
 	if err != nil {
 		log.Fatal(err)
 	}

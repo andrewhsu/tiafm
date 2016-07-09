@@ -2,24 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>AFM Classes</title>
+<title>AFM Racers</title>
 <style type="text/css">
 body { font-family: sans-serif }
 a { text-decoration: none }
 #col {
--webkit-column-width:200px;
--moz-column-width:200px;
--o-column-width:200px;
--ms-column-width:200px;
-column-width:200px;
+-webkit-column-width:250px;
+-moz-column-width:250px;
+-o-column-width:250px;
+-ms-column-width:250px;
+column-width:250px;
 }
 </style>
 </head>
 <body>
-<h1>AFM Classes</h1>
+<h1>AFM Racers</h1>
 <div id="col">
 <ul>
-{{#Classes}}<li><a href="c/{{Id}}">{{Name}}</a></li>{{/Classes}}
+{{range .Racers}}<li><a href="r/{{.Id}}">{{.Name}} #{{.Number}}</a></li>{{end}}
 </ul>
 </div>
 </body>

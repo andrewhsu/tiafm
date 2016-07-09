@@ -2,26 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>AFM {{Class}}</title>
+<title>AFM {{.Class}}</title>
 <style type="text/css">
 body { font-family: sans-serif }
 a { text-decoration: none }
 </style>
 </head>
 <body>
-<h1>AFM {{Class}}</h1>
+<h1>AFM {{.Class}}</h1>
 <p>Top 10 laptimes by track</p>
 <h2>Buttonwillow</h2>
 <ol>
-{{#Bw}}<li>{{Time}} set on {{Date}} by #{{Num}} {{Name}} riding {{Vehicle}}</li>{{/Bw}}
+{{range .Bw}}<li>{{.Time}} set on {{.Date}} by #{{.Num}} {{.Name}} riding {{.Vehicle}}</li>{{end}}
 </ol>
 <h2>Sonoma</h2>
 <ol>
-{{#So}}<li>{{Time}} set on {{Date}} by #{{Num}} {{Name}} riding {{Vehicle}}</li>{{/So}}
+{{range .So}}<li>{{.Time}} set on {{.Date}} by #{{.Num}} {{.Name}} riding {{.Vehicle}}</li>{{end}}
 </ol>
 <h2>Thunderhill</h2>
 <ol>
-{{#Th}}<li>{{Time}} set on {{Date}} by #{{Num}} {{Name}} riding {{Vehicle}}</li>{{/Th}}
+{{range .Th}}<li>{{.Time}} set on {{.Date}} by #{{.Num}} {{.Name}} riding {{.Vehicle}}</li>{{end}}
 </ol>
 </body>
 </html>
