@@ -1,0 +1,6 @@
+[submodule "cmd/server/vendor/github.com/mattn/go-sqlite3"]
+	path = cmd/server/vendor/github.com/mattn/go-sqlite3
+	url = https://github.com/mattn/go-sqlite3
+[submodule "cmd/importer/vendor/github.com/mattn/go-sqlite3"]
+	path = cmd/importer/vendor/github.com/mattn/go-sqlite3
+	url = https://github.com/mattn/go-sqlite3
