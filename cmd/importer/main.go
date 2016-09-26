@@ -1,10 +1,10 @@
 package main
 
 import (
-	"../../tiafm"
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"github.com/andrewhsu/tiafm"
 	_ "github.com/mattn/go-sqlite3"
 	"io/ioutil"
 	"log"
